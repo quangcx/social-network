@@ -1,0 +1,205 @@
+<style>
+  /* width */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  /* Track */
+  .custom-scrollbar::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+  }
+
+  /* Handle */
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #b8b5ff;
+    border-radius: 10px;
+  }
+
+  /* Handle on hover */
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #7868e6;
+  }
+</style>
+<header>
+  <div class="container">
+    <div class="header-data">
+      <div class="logo">
+        <a href="/" title=""><img src="images/logo.png" alt="" /></a>
+      </div>
+      <!--logo end-->
+      <div class="search-bar">
+        <form method="GET" action="/search-user">
+          <input type="text" name="search" placeholder="Search..." />
+          <button type="submit"><i class="la la-search"></i></button>
+        </form>
+      </div>
+      <!--search-bar end-->
+      <nav>
+        <ul>
+          <li>
+            <a href="/" title="">
+              <span><img src="images/icon1.png" alt="" /></span>
+              Home
+            </a>
+          </li>
+
+          <li>
+            <a href="profile" title="">
+              <span><img src="images/icon4.png" alt="" /></span>
+              My Profile
+            </a>
+          </li>
+
+          <li>
+            <a href="#" title="" class="not-box-open">
+              <span><img src="images/icon6.png" alt="" /></span>
+              Messages
+            </a>
+            <div class="notification-box msg">
+              <div class="nt-title">
+                <a href="#" title="">Read all</a>
+              </div>
+              <div class="nott-list">
+                <div
+                  class="custom-scrollbar"
+                  style="overflow-y: scroll; height: 300px"
+                >
+                  <% if(getMessageForCoversation) { %>
+                  <!-- ----------- -->
+                  <% getMessageForCoversation.forEach(function(item){ %>
+                  <div class="notfication-details">
+                    <div class="noty-user-img">
+                      <img src="images/User/<%= item.avatar %>" alt="" />
+                    </div>
+                    <div class="notification-info">
+                      <h3>
+                        <a href="#" title=""><%= item.fullname %></a>
+                      </h3>
+                      <p><%= item.messages[item.messages.length - 1].text %></p>
+                      <span>
+                        <% var hours = new
+                        Date(item.messages[item.messages.length - 1].createdAt)
+                        %> <%= hours.toLocaleTimeString() %></span
+                      >
+                    </div>
+                    <!--notification-info -->
+                  </div>
+                  <% }); %>
+                  <!-- ----------- -->
+                  <% } %>
+                </div>
+                <div class="view-all-nots">
+                  <a href="message" title="">View All Messsages</a>
+                </div>
+              </div>
+              <!--nott-list end-->
+            </div>
+            <!--notification-box end-->
+          </li>
+          <li>
+            <a href="#" title="" class="not-box-open">
+              <span><img src="images/icon7.png" alt="" /></span>
+              Notification
+            </a>
+            <div class="notification-box">
+              <div class="nt-title">
+                <a href="#" title="">Read all</a>
+              </div>
+              <div class="nott-list">
+                <div
+                  id="notification-info-scrollbar"
+                  class="custom-scrollbar"
+                  style="overflow-y: scroll; height: 400px"
+                ></div>
+                <div class="view-all-nots">
+                  <a href="#" title="">View All Notification</a>
+                </div>
+              </div>
+              <!--nott-list end-->
+            </div>
+            <!--notification-box end-->
+          </li>
+        </ul>
+      </nav>
+      <!--nav end-->
+      <div class="menu-btn">
+        <a href="#" title=""><i class="fa fa-bars"></i></a>
+      </div>
+      <!--menu-btn end-->
+      <div class="user-account">
+        <div class="user-info">
+          <img
+            id="user-info-avatar"
+            src="images/User/<%= user.avatar %>"
+            alt=""
+            style="object-fit: cover"
+          />
+          <a
+            href="#"
+            title=""
+            id="username-common-head"
+            style="
+              white-space: nowrap;
+              text-overflow: ellipsis;
+              width: 45px;
+              overflow: hidden;
+            "
+            ><%= user.fullname %></a
+          >
+          <i class="la la-sort-down"></i>
+        </div>
+        <div class="user-account-settingss">
+          <h3>Online Status</h3>
+          <ul class="on-off-status">
+            <li>
+              <div class="fgt-sec">
+                <input type="radio" name="cc" id="c5" />
+                <label for="c5">
+                  <span></span>
+                </label>
+                <small>Online</small>
+              </div>
+            </li>
+            <li>
+              <div class="fgt-sec">
+                <input type="radio" name="cc" id="c6" />
+                <label for="c6">
+                  <span></span>
+                </label>
+                <small>Offline</small>
+              </div>
+            </li>
+          </ul>
+          <h3>Custom Status</h3>
+          <div class="search_form">
+            <form>
+              <input type="text" name="search" />
+              <button type="submit">Ok</button>
+            </form>
+          </div>
+          <!--search_form end-->
+          <h3>
+            <a href="profile-setting" title="" style="color: black"
+              >Account Setting</a
+            >
+          </h3>
+          <!-- <ul class="us-links">
+            <li>
+              <a href="profile-setting" title="">Account Setting</a>
+            </li>
+            <li style="display: none"><a href="#" title="">Privacy</a></li>
+            <li style="display: none"><a href="#" title="">Faqs</a></li>
+            <li style="display: none">
+              <a href="#" title="">Terms & Conditions</a>
+            </li>
+          </ul> -->
+          <h3 class="tc"><a href="/logout" title="">Logout</a></h3>
+        </div>
+        <!--user-account-settingss end-->
+      </div>
+    </div>
+    <!--header-data end-->
+  </div>
+</header>
+<!--header end-->

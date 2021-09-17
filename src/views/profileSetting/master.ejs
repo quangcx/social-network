@@ -1,0 +1,669 @@
+<% extend('../index') %>
+<section class="profile-account-setting">
+  <div class="container">
+    <div class="account-tabs-setting">
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="acc-leftbar">
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+              <a
+                class="nav-item nav-link active"
+                id="nav-acc-tab"
+                data-toggle="tab"
+                href="#nav-acc"
+                role="tab"
+                aria-controls="nav-acc"
+                aria-selected="true"
+                ><i class="la la-cogs"></i>Account Setting</a
+              >
+              <a
+                class="nav-item nav-link"
+                id="nav-status-tab"
+                data-toggle="tab"
+                href="#nav-status"
+                role="tab"
+                aria-controls="nav-status"
+                aria-selected="false"
+                style="display: none"
+                ><i class="fa fa-line-chart"></i>Status</a
+              >
+              <a
+                class="nav-item nav-link"
+                id="nav-password-tab"
+                data-toggle="tab"
+                href="#nav-password"
+                role="tab"
+                aria-controls="nav-password"
+                aria-selected="false"
+                ><i class="fa fa-lock"></i>Change Password</a
+              >
+              <a
+                class="nav-item nav-link"
+                id="nav-notification-tab"
+                data-toggle="tab"
+                href="#nav-notification"
+                role="tab"
+                aria-controls="nav-notification"
+                aria-selected="false"
+                ><i class="fa fa-flash"></i>Notifications</a
+              >
+              <a
+                class="nav-item nav-link"
+                id="nav-requests-tab"
+                data-toggle="tab"
+                href="#nav-requests"
+                role="tab"
+                aria-controls="nav-requests"
+                aria-selected="false"
+                ><i class="fa fa-group"></i>Requests</a
+              >
+              <a
+                class="nav-item nav-link"
+                id="security-login"
+                data-toggle="tab"
+                href="#security-login"
+                role="tab"
+                aria-controls="security-login"
+                aria-selected="false"
+                style="display: none"
+                ><i class="fa fa-user-secret"></i>Security and Login</a
+              >
+              <a
+                class="nav-item nav-link"
+                id="privacy"
+                data-toggle="tab"
+                href="#privacy"
+                role="tab"
+                aria-controls="privacy"
+                aria-selected="false"
+                style="display: none"
+                ><i class="fa fa-paw"></i>Privacy</a
+              >
+              <a
+                class="nav-item nav-link"
+                id="blockking"
+                data-toggle="tab"
+                href="#blockking"
+                role="tab"
+                aria-controls="blockking"
+                aria-selected="false"
+                style="display: none"
+                ><i class="fa fa-cc-diners-club"></i>Blocking</a
+              >
+              <a
+                class="nav-item nav-link"
+                id="nav-deactivate-tab"
+                data-toggle="tab"
+                href="#nav-deactivate"
+                role="tab"
+                aria-controls="nav-deactivate"
+                aria-selected="false"
+                ><i class="fa fa-random"></i>Deactivate Account</a
+              >
+            </div>
+          </div>
+          <!--acc-leftbar end-->
+        </div>
+        <div class="col-lg-9">
+          <div class="tab-content" id="nav-tabContent">
+            <div
+              class="tab-pane fade show active"
+              id="nav-acc"
+              role="tabpanel"
+              aria-labelledby="nav-acc-tab"
+            >
+              <div class="acc-setting">
+                <h3>Account Setting</h3>
+                <form>
+                  <div class="notbar">
+                    <h4>Notification Sound</h4>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Vivamus pretium nulla quis erat dapibus, varius hendrerit
+                      neque suscipit. Integer in ex euismod, posuere lectus id
+                    </p>
+                    <div class="toggle-btn">
+                      <a href="#" title=""
+                        ><img src="images/up-btn.png" alt=""
+                      /></a>
+                    </div>
+                  </div>
+                  <!--notbar end-->
+                  <div class="notbar">
+                    <h4>Notification Email</h4>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Vivamus pretium nulla quis erat dapibus, varius hendrerit
+                      neque suscipit. Integer in ex euismod, posuere lectus id
+                    </p>
+                    <div class="toggle-btn">
+                      <a href="#" title=""
+                        ><img src="images/up-btn.png" alt=""
+                      /></a>
+                    </div>
+                  </div>
+                  <!--notbar end-->
+                  <div class="notbar">
+                    <h4>Chat Message Sound</h4>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Vivamus pretium nulla quis erat dapibus, varius hendrerit
+                      neque suscipit. Integer in ex euismod, posuere lectus id
+                    </p>
+                    <div class="toggle-btn">
+                      <a href="#" title=""
+                        ><img src="images/up-btn.png" alt=""
+                      /></a>
+                    </div>
+                  </div>
+                  <!--notbar end-->
+                  <div class="save-stngs">
+                    <ul>
+                      <li>
+                        <button type="submit" style="background-color: #e44d3a">
+                          Save Setting
+                        </button>
+                      </li>
+                      <li style="display: none">
+                        <button type="submit">Restore Setting</button>
+                      </li>
+                    </ul>
+                  </div>
+                  <!--save-stngs end-->
+                </form>
+              </div>
+              <!--acc-setting end-->
+            </div>
+            <div
+              class="tab-pane fade"
+              id="nav-status"
+              role="tabpanel"
+              aria-labelledby="nav-status-tab"
+            >
+              <div class="acc-setting">
+                <h3>Profile Status</h3>
+                <div class="profile-bx-details">
+                  <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                      <div class="profile-bx-info">
+                        <div class="pro-bx">
+                          <img src="images/pro-icon1.png" alt="" />
+                          <div class="bx-info">
+                            <h3>$5,145</h3>
+                            <h5>Total Income</h5>
+                          </div>
+                          <!--bx-info end-->
+                        </div>
+                        <!--pro-bx end-->
+                        <p>
+                          Lorem ipsum dolor sit amet, consectetur adipiscing.
+                        </p>
+                      </div>
+                      <!--profile-bx-info end-->
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                      <div class="profile-bx-info">
+                        <div class="pro-bx">
+                          <img src="images/pro-icon2.png" alt="" />
+                          <div class="bx-info">
+                            <h3>$4,745</h3>
+                            <h5>Widthraw</h5>
+                          </div>
+                          <!--bx-info end-->
+                        </div>
+                        <!--pro-bx end-->
+                        <p>
+                          Lorem ipsum dolor sit amet, consectetur adipiscing.
+                        </p>
+                      </div>
+                      <!--profile-bx-info end-->
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                      <div class="profile-bx-info">
+                        <div class="pro-bx">
+                          <img src="images/pro-icon3.png" alt="" />
+                          <div class="bx-info">
+                            <h3>$1,145</h3>
+                            <h5>Sent</h5>
+                          </div>
+                          <!--bx-info end-->
+                        </div>
+                        <!--pro-bx end-->
+                        <p>
+                          Lorem ipsum dolor sit amet, consectetur adipiscing.
+                        </p>
+                      </div>
+                      <!--profile-bx-info end-->
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                      <div class="profile-bx-info">
+                        <div class="pro-bx">
+                          <img src="images/pro-icon4.png" alt="" />
+                          <div class="bx-info">
+                            <h3>130</h3>
+                            <h5>Total Projects</h5>
+                          </div>
+                          <!--bx-info end-->
+                        </div>
+                        <!--pro-bx end-->
+                        <p>
+                          Lorem ipsum dolor sit amet, consectetur adipiscing.
+                        </p>
+                      </div>
+                      <!--profile-bx-info end-->
+                    </div>
+                  </div>
+                </div>
+                <!--profile-bx-details end-->
+                <div class="pro-work-status">
+                  <!-- <h4>Work Status  -  Last Months Working Status</h4> -->
+                </div>
+                <!--pro-work-status end-->
+              </div>
+              <!--acc-setting end-->
+            </div>
+            <div
+              class="tab-pane fade"
+              id="nav-password"
+              role="tabpanel"
+              aria-labelledby="nav-password-tab"
+            >
+              <div class="acc-setting">
+                <h3>Account Setting</h3>
+                <form>
+                  <div class="cp-field">
+                    <h5>Old Password</h5>
+                    <div class="cpp-fiel">
+                      <input
+                        type="password"
+                        name="old-password"
+                        placeholder="Old Password"
+                        onchange="checkPassword(this, false)"
+                      />
+                      <i class="fa fa-lock"></i>
+                    </div>
+                  </div>
+                  <div class="cp-field">
+                    <h5>New Password</h5>
+                    <div class="cpp-fiel">
+                      <input
+                        type="password"
+                        name="new-password"
+                        placeholder="New Password"
+                        onchange="checkPassword(this, false)"
+                      />
+                      <i class="fa fa-lock"></i>
+                    </div>
+                  </div>
+                  <div class="cp-field">
+                    <h5>Repeat Password</h5>
+                    <div class="cpp-fiel">
+                      <input
+                        type="password"
+                        name="repeat-password"
+                        placeholder="Repeat Password"
+                        onchange="checkPassword(this, true)"
+                      />
+                      <i class="fa fa-lock"></i>
+                    </div>
+                  </div>
+                  <div class="cp-field">
+                    <h5><a href="#" title="">Forgot Password?</a></h5>
+                  </div>
+                  <div class="save-stngs pd2">
+                    <ul>
+                      <li>
+                        <button
+                          type="button"
+                          style="background-color: #e44d3a"
+                          onclick="checkDataAndUpdate()"
+                        >
+                          Save Setting
+                        </button>
+                      </li>
+                      <li style="display: none">
+                        <button type="submit">Restore Setting</button>
+                      </li>
+                    </ul>
+                  </div>
+                  <!--save-stngs end-->
+                </form>
+              </div>
+              <!--acc-setting end-->
+            </div>
+            <div
+              class="tab-pane fade"
+              id="nav-notification"
+              role="tabpanel"
+              aria-labelledby="nav-notification-tab"
+            >
+              <div
+                class="acc-setting"
+                style="height: 550px; overflow-y: auto; overflow-x: hidden"
+              >
+                <h3>Notifications</h3>
+                <div class="notifications-list">
+                  <div class="notfication-details">
+                    <div class="noty-user-img">
+                      <img src="http://via.placeholder.com/35x35" alt="" />
+                    </div>
+                    <div class="notification-info">
+                      <h3>
+                        <a href="#" title="">Jassica William</a> Comment on your
+                        project.
+                      </h3>
+                      <span>2 min ago</span>
+                    </div>
+                    <!--notification-info -->
+                  </div>
+                  <!--notfication-details end-->
+                  <div class="notfication-details">
+                    <div class="noty-user-img">
+                      <img src="http://via.placeholder.com/35x35" alt="" />
+                    </div>
+                    <div class="notification-info">
+                      <h3>
+                        <a href="#" title="">Poonam Verma</a> Bid on your Latest
+                        project.
+                      </h3>
+                      <span>2 min ago</span>
+                    </div>
+                    <!--notification-info -->
+                  </div>
+                  <!--notfication-details end-->
+                  <div class="notfication-details">
+                    <div class="noty-user-img">
+                      <img src="http://via.placeholder.com/35x35" alt="" />
+                    </div>
+                    <div class="notification-info">
+                      <h3>
+                        <a href="#" title="">Tonney Dhman</a> Comment on your
+                        project.
+                      </h3>
+                      <span>2 min ago</span>
+                    </div>
+                    <!--notification-info -->
+                  </div>
+                  <!--notfication-details end-->
+                  <div class="notfication-details">
+                    <div class="noty-user-img">
+                      <img src="http://via.placeholder.com/35x35" alt="" />
+                    </div>
+                    <div class="notification-info">
+                      <h3>
+                        <a href="#" title="">Jassica William</a> Comment on your
+                        project.
+                      </h3>
+                      <span>2 min ago</span>
+                    </div>
+                    <!--notification-info -->
+                  </div>
+                  <!--notfication-details end-->
+                  <div class="notfication-details">
+                    <div class="noty-user-img">
+                      <img src="http://via.placeholder.com/35x35" alt="" />
+                    </div>
+                    <div class="notification-info">
+                      <h3>
+                        <a href="#" title="">Jassica William</a> Comment on your
+                        project.
+                      </h3>
+                      <span>2 min ago</span>
+                    </div>
+                    <!--notification-info -->
+                  </div>
+                  <!--notfication-details end-->
+                  <div class="notfication-details">
+                    <div class="noty-user-img">
+                      <img src="http://via.placeholder.com/35x35" alt="" />
+                    </div>
+                    <div class="notification-info">
+                      <h3>
+                        <a href="#" title="">Poonam Verma </a> Bid on your
+                        Latest project.
+                      </h3>
+                      <span>2 min ago</span>
+                    </div>
+                    <!--notification-info -->
+                  </div>
+                  <!--notfication-details end-->
+                  <div class="notfication-details">
+                    <div class="noty-user-img">
+                      <img src="http://via.placeholder.com/35x35" alt="" />
+                    </div>
+                    <div class="notification-info">
+                      <h3>
+                        <a href="#" title="">Tonney Dhman</a> Comment on your
+                        project
+                      </h3>
+                      <span>2 min ago</span>
+                    </div>
+                    <!--notification-info -->
+                  </div>
+                  <!--notfication-details end-->
+                  <div class="notfication-details">
+                    <div class="noty-user-img">
+                      <img src="http://via.placeholder.com/35x35" alt="" />
+                    </div>
+                    <div class="notification-info">
+                      <h3>
+                        <a href="#" title="">Jassica William</a> Comment on your
+                        project.
+                      </h3>
+                      <span>2 min ago</span>
+                    </div>
+                    <!--notification-info -->
+                  </div>
+                  <!--notfication-details end-->
+                </div>
+                <!--notifications-list end-->
+              </div>
+              <!--acc-setting end-->
+            </div>
+            <div
+              class="tab-pane fade"
+              id="nav-requests"
+              role="tabpanel"
+              aria-labelledby="nav-requests-tab"
+            >
+              <div
+                class="acc-setting"
+                style="height: 550px; overflow-y: auto; overflow-x: hidden"
+              >
+                <h3>Requests</h3>
+                <div class="requests-list">
+                  <% if(requestFriends != "") { %> <%
+                  requestFriends.forEach(item => { %>
+                  <div class="request-details" data-uid="<%= item.userId %>">
+                    <div class="noty-user-img">
+                      <img
+                        src="images/User/<%= item.avatar %>"
+                        alt=""
+                        style="height: 50px"
+                      />
+                    </div>
+                    <div class="request-info">
+                      <h3><%= item.fullname %></h3>
+                      <span>Graphic Designer</span>
+                    </div>
+                    <div class="accept-feat">
+                      <ul>
+                        <li>
+                          <button type="submit" class="accept-req">
+                            Accept
+                          </button>
+                        </li>
+                        <li>
+                          <button type="submit" class="close-req">
+                            <i class="la la-close"></i>
+                          </button>
+                        </li>
+                      </ul>
+                    </div>
+                    <!--accept-feat end-->
+                  </div>
+                  <% }) %> <% } %>
+                </div>
+                <!--requests-list end-->
+              </div>
+              <!--acc-setting end-->
+            </div>
+            <div
+              class="tab-pane fade"
+              id="nav-deactivate"
+              role="tabpanel"
+              aria-labelledby="nav-deactivate-tab"
+            >
+              <div
+                class="acc-setting"
+                style="height: 550px; overflow-y: auto; overflow-x: hidden"
+              >
+                <h3>Deactivate Account</h3>
+                <form>
+                  <div class="cp-field">
+                    <h5>Email</h5>
+                    <div class="cpp-fiel">
+                      <input type="text" name="email" placeholder="Email" />
+                      <i class="fa fa-envelope"></i>
+                    </div>
+                  </div>
+                  <div class="cp-field">
+                    <h5>Password</h5>
+                    <div class="cpp-fiel">
+                      <input
+                        type="password"
+                        name="password"
+                        placeholder="Password"
+                      />
+                      <i class="fa fa-lock"></i>
+                    </div>
+                  </div>
+                  <div class="cp-field">
+                    <h5>Please Explain Further</h5>
+                    <textarea></textarea>
+                  </div>
+                  <div class="cp-field">
+                    <div class="fgt-sec">
+                      <input type="checkbox" name="cc" id="c4" />
+                      <label for="c4">
+                        <span></span>
+                      </label>
+                      <small>Email option out</small>
+                    </div>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Vivamus pretium nulla quis erat dapibus, varius hendrerit
+                      neque suscipit. Integer in ex euismod, posuere lectus id,
+                    </p>
+                  </div>
+                  <div class="save-stngs pd3">
+                    <ul>
+                      <li>
+                        <button type="submit" style="background-color: #e44d3a">
+                          Save Setting
+                        </button>
+                      </li>
+                      <li style="display: none">
+                        <button type="submit">Restore Setting</button>
+                      </li>
+                    </ul>
+                  </div>
+                  <!--save-stngs end-->
+                </form>
+              </div>
+              <!--acc-setting end-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--account-tabs-setting end-->
+  </div>
+</section>
+
+<!--theme-layout end-->
+
+<script>
+  function checkPassword(element, repeatPassword) {
+    let input = $(element);
+    let passInput = input.val();
+    let regexPassword = new RegExp(
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,}$/
+    );
+
+    if (!repeatPassword) {
+      if (!regexPassword.test(passInput)) {
+        alertify.error(
+          'Password must contain at least 8 characters, including uppercase letters, lower case letters, numbers and special characters.'
+        );
+        input.val(null);
+        return false;
+      }
+    } else {
+      if (passInput !== $('input[name = "new-password"]').val()) {
+        alertify.error(
+          'Your confirm password does not match the new password.'
+        );
+        input.val(null);
+        return false;
+      }
+    }
+  }
+  function clearFormPassword() {
+    let inputPass = $('input[name$="-password"]');
+    inputPass.each((index, item) => {
+      $(item).val(null);
+    });
+  }
+
+  function checkDataAndUpdate() {
+    let inputs = $('input[name$="-password"]');
+    let passInput = {
+      id: JSON.parse('<%- JSON.stringify(user._id) %>'),
+      oldPassword: $(inputs.get(0)).val(),
+      newPassword: $(inputs.get(1)).val(),
+      confirmPassword: $(inputs.get(2)).val(),
+    };
+
+    if (!passInput['oldPassword']) {
+      alertify.notify('This old password field is required not null');
+      $(inputs.get(0)).focus();
+      return false;
+    } else if (!passInput['newPassword']) {
+      alertify.notify('This new password field is required not null');
+      $(inputs.get(1)).focus();
+      return false;
+    } else if (!passInput['confirmPassword']) {
+      alertify.notify('This confirm password field is required not null');
+      $(inputs.get(2)).focus();
+      return false;
+    }
+
+    $.ajax({
+      url: '/change-password',
+      type: 'PUT',
+      data: passInput,
+      success: function (res) {
+        alertify.success(res);
+        clearFormPassword();
+      },
+      error: function (err) {
+        alertify.success(err);
+        clearFormPassword();
+      },
+    });
+  }
+</script>
+<!-- ------------------------------ -->
+<% if(locatedFriendRequest != "") { %> <%- locatedFriendRequest %> <% } %>
+<!-- -----------------Get All Notifications---------------------- -->
+<script>
+  let notificationStr = '<%- allNotifications %>';
+  loadAllNotifications(notificationStr);
+  readNotification('<%- user._id %>');
+</script>
+<!-- ------------------ Accept Or Delete Friend Request ------------------------------------------------------- -->
+<script>
+  acceptRequest('<%- user._id %>');
+  deleteRequest('<%- user._id %>');
+</script>

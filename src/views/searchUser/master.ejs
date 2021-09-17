@@ -1,0 +1,92 @@
+<% extend('../index') %>
+<style>
+  footer{
+    position: fixed;
+    bottom: 0px;
+  }
+</style>
+<section
+  class="companies-info"
+>
+  <div class="container">
+    <div class="company-title">
+      <h3>All Profiles</h3>
+    </div>
+    <!--company-title end-->
+    <% if(errors != '') { %>
+    <script>
+      alertify.error('<%= errors %>');
+    </script>
+    <% } else { %>
+    <!-- ----------------------->
+    <% if(users.length > 0) { %>
+    <div class="companies-list">
+      <div class="row">
+        <!-- Render contact profile -->
+        <% users.forEach(userProfile => { %>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+          <div class="company_profile_info">
+            <div class="company-up-info">
+              <img
+                src="images/User/<%= userProfile.avatar %>"
+                alt=""
+                style="height: 90px; width: 90px"
+              />
+              <h3><%= userProfile.fullname %></h3>
+              <h4>User Bio</h4>
+              <ul>
+                <li>
+                  <a
+                    href="#"
+                    title=""
+                    class="follow add-new-contact"
+                    data-uid="<%= userProfile._id %>"
+                    >Add</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    title=""
+                    class="follow remove-request-contact"
+                    data-uid="<%= userProfile._id %>"
+                    style="display: none; background: yellowgreen"
+                    >Cancel</a
+                  >
+                </li>
+                <li>
+                  <a href="#" title="" class="message-us"
+                    ><i class="fa fa-envelope" style="margin-right: 5px"></i
+                    >Message</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <a href="#" title="" class="view-more-pro">View Profile</a>
+          </div>
+          <!--company_profile_info end-->
+        </div>
+        <% }) %>
+      </div>
+    </div>
+
+    <!-- end for loop -->
+    <!-- Handle friend request -->
+    <script>
+      addNewContact();
+      removeRequestContact();
+    </script>
+    <% } else { %>
+    <h4 style="text-align: center">Oops! Can't find anyone.</h4>
+    <% } %>
+    <!--companies-list end-->
+    <% } %>
+  </div>
+</section>
+<!--theme-layout end-->
+<!-- -----------------Get All Notifications---------------------- -->
+<script>
+  let notificationStr = '<%- allNotifications %>';
+  loadAllNotifications(notificationStr);
+  readNotification('<%- user._id %>');
+</script>

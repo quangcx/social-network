@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Social Chatapp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Style -->
+    <link rel="stylesheet" type="text/css" href="css/animate.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/flatpickr.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/line-awesome.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="css/line-awesome-font-awesome.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="css/jquery.mCustomScrollbar.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="lib/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="lib/slick/slick-theme.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/responsive.css" />
+    <link rel="stylesheet" type="text/css" href="alertifyjs/css/alertify.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="alertifyjs/css/themes/default.css"
+    />
+    <link rel="stylesheet" href="emojionearea/dist/emojionearea.min.css" />
+    <!-- End Style -->
+
+    <!-- Script -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/popper.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/flatpickr.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mCustomScrollbar.js"></script>
+    <script type="text/javascript" src="lib/slick/slick.min.js"></script>
+    <script type="text/javascript" src="js/scrollbar.js"></script>
+    <!-- Socket IO -->
+    <script type="text/javascript" src="socket.io/socket.io.js"></script>
+    <!-- Peer Js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/peerjs/1.3.2/peerjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
+    <script type="text/javascript" src="alertifyjs/alertify.js"></script>
+    <script
+      type="text/javascript"
+      src="emojionearea/dist/emojionearea.min.js"
+    ></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/addNewContact.js"></script>
+    <script type="text/javascript" src="js/removeRequestContact.js"></script>
+    <script
+      type="text/javascript"
+      src="js/loadMessagesAndNotifications.js"
+    ></script>
+    <script type="text/javascript" src="js/acceptFriendRequest.js"></script>
+    <script type="text/javascript" src="js/textMessageAndEmoji.js"></script>
+    <script type="text/javascript" src="js/addNewPost.js"></script>
+    <script type="text/javascript" src="js/videoChat.js"></script>
+    <!-- End Script -->
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!--header-->
+      <%- include('common/header')%>
+
+      <!-- content -->
+      <%- content %>
+
+      <!--footer-->
+      <%- include('common/footer')%>
+    </div>
+    <!--theme-layout end-->
+  </body>
+</html>

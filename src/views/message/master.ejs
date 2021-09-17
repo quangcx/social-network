@@ -1,0 +1,330 @@
+<% extend('../index') %>
+<style>
+  html,
+  body {
+    overflow: hidden;
+  }
+  .emojionearea-inline {
+    border: 0;
+    background: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+  }
+  footer {
+    display: none;
+  }
+  .messages-page {
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0;
+    top: 10px;
+    height: 630px;
+  }
+  .mCustomScrollBox.mCS-light.mCSB_vertical.mCSB_inside {
+    height: 480px;
+  }
+</style>
+
+<section class="messages-page">
+  <div class="container">
+    <div class="messages-sec">
+      <div class="row">
+        <div
+          class="col-lg-4 col-md-12 no-pdd"
+          style="
+            background: floralwhite;
+            border-bottom: 1px solid #ccc;
+            border-left: 1px solid #ccc;
+          "
+        >
+          <div class="msgs-list">
+            <div class="msg-title">
+              <h3>Messages</h3>
+              <ul>
+                <li>
+                  <a href="#" title=""><i class="fa fa-cog"></i></a>
+                </li>
+                <li>
+                  <a href="#" title=""><i class="fa fa-ellipsis-v"></i></a>
+                </li>
+              </ul>
+            </div>
+            <!--msg-title end-->
+            <div class="messages-list">
+              <ul>
+                <% if(getMessageForCoversation) { %> <%
+                getMessageForCoversation.forEach(function(item){ %>
+                <li
+                  class="active list-chat-item"
+                  data-target="#to_<%= item._id %>"
+                  style="border-bottom: 1px solid #ccc"
+                >
+                  <div class="usr-msg-details">
+                    <div class="usr-ms-img">
+                      <img
+                        src="images/User/<%= item.avatar %>"
+                        alt=""
+                        style="height: 50px; width: 50px; object-fit: cover"
+                      />
+                      <span class="msg-status"></span>
+                    </div>
+                    <div class="usr-mg-info">
+                      <h3><%= item.fullname %></h3>
+                      <p
+                        style="
+                          white-space: nowrap;
+                          text-overflow: ellipsis;
+                          overflow: hidden;
+                          width: 140px;
+                        "
+                      >
+                        <% if(getLastItemOfArray(item.messages).messageType
+                        =="text"){ %> <%
+                        if(getLastItemOfArray(item.messages).senderId ==
+                        user._id){ %> You sent: <%=
+                        getLastItemOfArray(item.messages).text%> <% } else { %>
+                        <%= getLastItemOfArray(item.messages).text%> <% } %> <%
+                        } %>
+                        <!-- -------------------------- -->
+                        <% if(getLastItemOfArray(item.messages).messageType
+                        =="image"){ %> <%
+                        if(getLastItemOfArray(item.messages).senderId ==
+                        user._id){ %> You sent an image <% } else { %> An image
+                        <% } %> <% } %>
+                        <!-- --------------------------- -->
+                        <% if(getLastItemOfArray(item.messages).messageType
+                        =="file"){ %> <%
+                        if(getLastItemOfArray(item.messages).senderId ==
+                        user._id){ %> You sent a file <% } else { %> A file <% }
+                        %> <% } %>
+                      </p>
+                    </div>
+                    <!--usr-mg-info end-->
+                    <span class="posted_time">
+                      <%=
+                      covertTimestamp(getLastItemOfArray(item.messages).createdAt)
+                      %>
+                    </span>
+                    <% caculateMsgUnread.forEach(function(caculateMsg){ %> <%
+                    if(caculateMsg.friend == item._id){ %>
+                    <span class="msg-notifc"><%= caculateMsg.total %></span>
+                    <% } %> <% }) %>
+                  </div>
+                  <!--usr-msg-details end-->
+                </li>
+                <% }); %> <% } %>
+                <!-- <li>
+                  <div class="usr-msg-details">
+                    <div class="usr-ms-img">
+                      <img src="http://via.placeholder.com/50x50" alt="" />
+                    </div>
+                    <div class="usr-mg-info">
+                      <h3>David Vane</h3>
+                      <p>Vestibulum ac diam..</p>
+                    </div>
+                    <span class="posted_time">1:55 PM</span>
+                  </div>
+                </li> -->
+              </ul>
+            </div>
+            <!--messages-list end-->
+          </div>
+          <!--msgs-list end-->
+        </div>
+        <div class="col-lg-8 col-md-12 pd-right-none pd-left-none">
+          <% if(getMessageForCoversation) { %> <%
+          getMessageForCoversation.forEach(function(item, index){ %>
+          <div
+            class="main-conversation-box tab-content <% if(index == 0) { %> active <% } %>"
+            data-chat="<%= item._id %>"
+            id="to_<%= item._id %>"
+          >
+            <div class="message-bar-head">
+              <div class="usr-msg-details">
+                <div class="usr-ms-img">
+                  <img
+                    src="images/User/<%= item.avatar %>"
+                    alt=""
+                    style="height: 50px; width: 50px; object-fit: cover"
+                  />
+                </div>
+                <div class="usr-mg-info">
+                  <h3><%= item.fullname %></h3>
+                  <p>Online</p>
+                </div>
+                <!--usr-mg-info end-->
+              </div>
+              <a
+                class="video-chat"
+                id="video-chat-<%= item._id %>"
+                data-chat="<%= item._id %>"
+                href="javascript:void(0)"
+                title=""
+                style="position: absolute; right: 45px"
+                ><i class="fa fa-video-camera"></i
+              ></a>
+              <a href="#" title=""><i class="fa fa-ellipsis-v"></i></a>
+            </div>
+            <!--message-bar-head end-->
+            <div class="messages-line" data-chat="<%= item._id %>">
+              <% item.messages.forEach(function(message){ %>
+              <div
+                class="main-message-box <% if(message.senderId == user._id) { %> ta-right <% } else { %> st3 <% } %>"
+                data-mess-id="<%= message._id %>"
+              >
+                <div
+                  class="message-dt <% if(message.senderId != user._id) { %> st3 <% } %>"
+                >
+                  <div class="message-inner-dt">
+                    <% if(message.messageType == "text") { %>
+                    <p><%= message.text %></p>
+                    <% } %>
+                    <!-- ------------Text message-------------- -->
+                    <% if(message.messageType == "image") { %>
+                    <img
+                      src="data:<%= message.file.contentType %>; base64, <%= bufferToBase64(message.file.data) %>"
+                      alt=""
+                    />
+                    <% } %>
+                    <!-- ------------------Image message---------------- -->
+                    <% if(message.messageType == "file") { %>
+                    <a
+                      href="data:<%= message.file.contentType %>; base64, <%= bufferToBase64(message.file.data) %>"
+                      download="<%= message.file.fileName %>"
+                    >
+                      <%= message.file.fileName %>
+                    </a>
+                    <% }%>
+                    <!-- ------------------File message------------------ -->
+                  </div>
+                  <span><%= covertTimestamp(message.createdAt) %></span>
+                </div>
+                <!--message-dt end-->
+                <div class="messg-usr-img">
+                  <img
+                    src="images/User/<%= message.sender.avatar %>"
+                    alt=""
+                    style="height: 50px; width: 50px; object-fit: cover"
+                  />
+                </div>
+              </div>
+              <% }); %>
+            </div>
+            <!--messages-line end-->
+            <div class="message-send-area">
+              <form>
+                <div class="mf-field">
+                  <input
+                    id="message_<%= item._id %>"
+                    type="text"
+                    name="message"
+                    placeholder="Type a message here"
+                    onfocus="listenToClick(this);"
+                  />
+                  <button
+                    type="submit"
+                    onclick="getTextMessageAndEmoji('<%= item._id %>'); return false"
+                  >
+                    Send
+                  </button>
+                </div>
+                <ul>
+                  <li style="height: 22px; width: 25px; margin-right: 13px">
+                    <textarea
+                      id="emoji_<%= item._id %>"
+                      onblur="getEmoji('message_' + '<%= item._id %>', 'emoji_' + '<%= item._id %>');"
+                      class="emoji"
+                      style="display: none"
+                    ></textarea>
+                  </li>
+                  <li>
+                    <a href="#" title=""><i class="fa fa-camera"></i></a>
+                  </li>
+                  <li>
+                    <a href="#" title=""><i class="fa fa-paperclip"></i></a>
+                  </li>
+                </ul>
+              </form>
+            </div>
+            <!--message-send-area end-->
+          </div>
+          <!--main-conversation-box end-->
+          <% }); %> <% } %>
+        </div>
+      </div>
+    </div>
+    <!--messages-sec end-->
+  </div>
+</section>
+<!-- -------------- Video call ---------------- -->
+<style>
+  .video-chat-container {
+    text-align: center;
+    height: 638px;
+    padding: 50px;
+    box-sizing: border-box;
+    background-color: #ccc;
+    margin-top: 56px;
+    position: relative;
+    z-index: 1000000;
+  }
+  .video-chat-container .friend,
+  .video-chat-container .myself {
+    position: absolute;
+  }
+  .video-chat-container .myself {
+    top: 50px;
+    right: 50px;
+    width: 25%;
+    height: 25%;
+  }
+  .video-chat-container .friend {
+    top: 50px;
+    left: 50px;
+    right: 50px;
+    bottom: 50px;
+  }
+  .video-chat-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .video-chat-container .end-call-video {
+    position: relative;
+    bottom: 35px;
+    background-color: red;
+    height: 30px;
+    width: 70px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .video-chat-container h4 {
+    position: absolute;
+    z-index: 100;
+    margin-top: 5px;
+    color: white;
+    left: calc(50% - 50px);
+  }
+</style>
+<div class="video-chat-container" style="display: none">
+  <div class="friend">
+    <h4></h4>
+    <video id="peer-camera" autoplay="autoplay" muted="true"></video>
+  </div>
+  <div class="myself">
+    <h4></h4>
+    <video id="my-camera" autoplay="autoplay"></video>
+  </div>
+  <button class="end-call-video">End call</button>
+</div>
+<!-- --------------- End video call--------------------- -->
+<!--messages-page end-->
+<!-- -----------------Get All Notifications---------------------- -->
+<script>
+  let notificationStr = '<%- allNotifications %>';
+  loadAllNotifications(notificationStr);
+  readNotification('<%- user._id %>');
+</script>
